@@ -64,16 +64,6 @@
                           }
                        },
                        {
-                          "createRole":{
-                             "roleName":"money_creator",
-                             "permissions":[
-                                "can_add_asset_qty",
-                                "can_receive",
-                                "can_transfer"
-                             ]
-                          }
-                       },
-                       {
                           "createDomain":{
                              "domainId":"pokemon",
                              "defaultRole":"user"
@@ -105,12 +95,6 @@
                              "assetName":"pokeball",
                              "domainId":"pokemon",
                              "precision":0
-                          }
-                       },
-                       {
-                          "appendRole":{
-                             "accountId":"trainer@pokemon",
-                             "roleName":"user"
                           }
                        },
                        {
