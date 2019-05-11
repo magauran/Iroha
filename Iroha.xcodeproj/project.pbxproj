@@ -12,9 +12,16 @@
 		8A7467DF2286610E0061B631 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A7467DD2286610E0061B631 /* Main.storyboard */; };
 		8A7467E1228661140061B631 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A7467E0228661140061B631 /* Assets.xcassets */; };
 		8A7467E4228661140061B631 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A7467E2228661140061B631 /* LaunchScreen.storyboard */; };
+		8A7467EC228662B00061B631 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7467EB228662B00061B631 /* Constants.swift */; };
+		8A7467F0228667010061B631 /* String+Hexadecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7467EF228667010061B631 /* String+Hexadecimal.swift */; };
+		8A7467F422866AE10061B631 /* IrohaErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7467F322866AE10061B631 /* IrohaErrors.swift */; };
+		8A7467F622866D500061B631 /* Data+Hexadecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7467F522866D500061B631 /* Data+Hexadecimal.swift */; };
+		E7C9703CAE348B91B0119380 /* Pods_Iroha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D6528C4E6C3A7D42776897 /* Pods_Iroha.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04D6528C4E6C3A7D42776897 /* Pods_Iroha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Iroha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A1E0EB3EB9C87E03198B80E /* Pods-Iroha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Iroha.release.xcconfig"; path = "Pods/Target Support Files/Pods-Iroha/Pods-Iroha.release.xcconfig"; sourceTree = "<group>"; };
 		8A7467D62286610E0061B631 /* Iroha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Iroha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A7467D92286610E0061B631 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A7467DB2286610E0061B631 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +29,11 @@
 		8A7467E0228661140061B631 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A7467E3228661140061B631 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A7467E5228661150061B631 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A7467EB228662B00061B631 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8A7467EF228667010061B631 /* String+Hexadecimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Hexadecimal.swift"; sourceTree = "<group>"; };
+		8A7467F322866AE10061B631 /* IrohaErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrohaErrors.swift; sourceTree = "<group>"; };
+		8A7467F522866D500061B631 /* Data+Hexadecimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Hexadecimal.swift"; sourceTree = "<group>"; };
+		A90006050AF074D4DF3612B9 /* Pods-Iroha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Iroha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Iroha/Pods-Iroha.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +41,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7C9703CAE348B91B0119380 /* Pods_Iroha.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1908B54BB2076AFAAD71E1F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04D6528C4E6C3A7D42776897 /* Pods_Iroha.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		210D3260F4967112C1740806 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A90006050AF074D4DF3612B9 /* Pods-Iroha.debug.xcconfig */,
+				5A1E0EB3EB9C87E03198B80E /* Pods-Iroha.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8A7467CD2286610D0061B631 = {
 			isa = PBXGroup;
 			children = (
 				8A7467D82286610E0061B631 /* Iroha */,
 				8A7467D72286610E0061B631 /* Products */,
+				210D3260F4967112C1740806 /* Pods */,
+				1908B54BB2076AFAAD71E1F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +88,10 @@
 			children = (
 				8A7467D92286610E0061B631 /* AppDelegate.swift */,
 				8A7467DB2286610E0061B631 /* ViewController.swift */,
+				8A7467EB228662B00061B631 /* Constants.swift */,
+				8A7467EF228667010061B631 /* String+Hexadecimal.swift */,
+				8A7467F522866D500061B631 /* Data+Hexadecimal.swift */,
+				8A7467F322866AE10061B631 /* IrohaErrors.swift */,
 				8A7467DD2286610E0061B631 /* Main.storyboard */,
 				8A7467E0228661140061B631 /* Assets.xcassets */,
 				8A7467E2228661140061B631 /* LaunchScreen.storyboard */,
@@ -71,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8A7467E8228661150061B631 /* Build configuration list for PBXNativeTarget "Iroha" */;
 			buildPhases = (
+				AB4063893FA4ABD69F0C4510 /* [CP] Check Pods Manifest.lock */,
 				8A7467D22286610E0061B631 /* Sources */,
 				8A7467D32286610E0061B631 /* Frameworks */,
 				8A7467D42286610E0061B631 /* Resources */,
+				8CB7FA6216FFFAC1FBBE2539 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,13 +168,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8CB7FA6216FFFAC1FBBE2539 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Iroha/Pods-Iroha-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/IrohaCommunication/IrohaCommunication.framework",
+				"${BUILT_PRODUCTS_DIR}/IrohaCrypto/IrohaCrypto.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IrohaCommunication.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IrohaCrypto.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Iroha/Pods-Iroha-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB4063893FA4ABD69F0C4510 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Iroha-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8A7467D22286610E0061B631 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A7467F622866D500061B631 /* Data+Hexadecimal.swift in Sources */,
 				8A7467DC2286610E0061B631 /* ViewController.swift in Sources */,
+				8A7467F0228667010061B631 /* String+Hexadecimal.swift in Sources */,
+				8A7467F422866AE10061B631 /* IrohaErrors.swift in Sources */,
 				8A7467DA2286610E0061B631 /* AppDelegate.swift in Sources */,
+				8A7467EC228662B00061B631 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +377,7 @@
 		};
 		8A7467E9228661150061B631 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A90006050AF074D4DF3612B9 /* Pods-Iroha.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -297,6 +395,7 @@
 		};
 		8A7467EA228661150061B631 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A1E0EB3EB9C87E03198B80E /* Pods-Iroha.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
