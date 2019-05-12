@@ -23,12 +23,31 @@ class IrohaService {
                     else { return IRPromise(result: result) }
                 return self.networkService.onTransactionStatus(.committed, withHash: transactionHash)
             }.onThen { result -> IRPromise? in
-                if let status = result as? IRTransactionStatus, status == IRTransactionStatus.committed {
+                if let status = result as? UInt, status == IRTransactionStatus.committed.rawValue {
                     handler(nil)
                 } else {
                     handler(IrohaError.invalidTransaction)
                 }
                 return nil
         }
+    }
+    
+    func execute<ResponseType>(
+        query: IRQueryRequest,
+        responseType: ResponseType.Type,
+        then handler: @escaping (Result<ResponseType, IrohaError>) -> Void
+        ) {
+        _ = networkService.execute(query)
+            .onThen { result -> IRPromise? in
+                guard
+                    let result = result,
+                    let accountAssetsResponse = result as? ResponseType
+                    else {
+                        handler(.failure(IrohaError.invalidQueryRequest))
+                        return nil
+                }
+                handler(Result.success(accountAssetsResponse))
+                return nil
+            }
     }
 }

@@ -19,23 +19,45 @@ class MainViewController: UIViewController {
         return IRNetworkService(address: irohaAddress)
     }()
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+    private var timer: Timer?
+    private let irohaService = IrohaService()
+    private var query: IRQueryRequest {
         let userAccountId: IRAccountId = {
             return try! IRAccountIdFactory.account(withIdentifier: LoginService.currentAccount!)
         }()
         
-        let query = try! IRQueryBuilder(creatorAccountId: userAccountId)
+        return try! IRQueryBuilder(creatorAccountId: userAccountId)
             .getAccountAssets(userAccountId)
             .build()
             .signed(with: Account.admin)
-     
-        _ = networkService.execute(query)
-            .onThen { [unowned self] result -> IRPromise? in
-                guard let result = result else { return nil }
-                guard let accountAssetsResponse = result as? IRAccountAssetsResponse else { return nil }
-                accountAssetsResponse.accountAssets.forEach { asset in
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        runTimer()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        timer?.invalidate()
+    }
+    
+    private func runTimer() {
+        timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { [unowned self] _ in
+            self.reloadData()
+        }
+    }
+    
+    private func reloadData() {
+        irohaService.execute(query: query, responseType: IRAccountAssetsResponse.self) { result in
+            switch result {
+            case .success(let response):
+                response.accountAssets.forEach { asset in
                     if asset.assetId.name == "pokeball" {
                         self.pokeballsLabel.text = "\(asset.balance.value) pokeballs"
                     }
@@ -43,11 +65,9 @@ class MainViewController: UIViewController {
                         self.coinsLabel.text = "\(asset.balance.value) pokecoins"
                     }
                 }
-                
-                return nil
-            }.onError { error -> IRPromise? in
-                
-                return nil
+            case .failure(let error):
+                print(error)
+            }
         }
     }
 }
