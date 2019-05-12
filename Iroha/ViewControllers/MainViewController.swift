@@ -19,8 +19,8 @@ class MainViewController: UIViewController {
         return IRNetworkService(address: irohaAddress)
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         let userAccountId: IRAccountId = {
             return try! IRAccountIdFactory.account(withIdentifier: LoginService.currentAccount!)

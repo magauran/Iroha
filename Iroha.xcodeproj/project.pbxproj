@@ -12,6 +12,9 @@
 		8A1975482288472F00C95202 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1975472288472F00C95202 /* MainViewController.swift */; };
 		8A19754A2288579600C95202 /* IRQueryRequest+Signed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1975492288579600C95202 /* IRQueryRequest+Signed.swift */; };
 		8A19754C2288593B00C95202 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A19754B2288593B00C95202 /* Account.swift */; };
+		8A19754E22886F2600C95202 /* TransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A19754D22886F2600C95202 /* TransferViewController.swift */; };
+		8A197550228872E800C95202 /* IRTransaction+Signed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A19754F228872E800C95202 /* IRTransaction+Signed.swift */; };
+		8A197553228890AD00C95202 /* IrohaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A197552228890AD00C95202 /* IrohaService.swift */; };
 		8A7467DA2286610E0061B631 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7467D92286610E0061B631 /* AppDelegate.swift */; };
 		8A7467DC2286610E0061B631 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7467DB2286610E0061B631 /* ViewController.swift */; };
 		8A7467DF2286610E0061B631 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A7467DD2286610E0061B631 /* Main.storyboard */; };
@@ -32,6 +35,9 @@
 		8A1975472288472F00C95202 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8A1975492288579600C95202 /* IRQueryRequest+Signed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IRQueryRequest+Signed.swift"; sourceTree = "<group>"; };
 		8A19754B2288593B00C95202 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		8A19754D22886F2600C95202 /* TransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferViewController.swift; sourceTree = "<group>"; };
+		8A19754F228872E800C95202 /* IRTransaction+Signed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IRTransaction+Signed.swift"; sourceTree = "<group>"; };
+		8A197552228890AD00C95202 /* IrohaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrohaService.swift; sourceTree = "<group>"; };
 		8A7467D62286610E0061B631 /* Iroha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Iroha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A7467D92286610E0061B631 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A7467DB2286610E0061B631 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +81,26 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8A1975512288730C00C95202 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8A7467EF228667010061B631 /* String+Hexadecimal.swift */,
+				8A7467F522866D500061B631 /* Data+Hexadecimal.swift */,
+				8A1975492288579600C95202 /* IRQueryRequest+Signed.swift */,
+				8A19754F228872E800C95202 /* IRTransaction+Signed.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8A197554228890E100C95202 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8A1975452288438D00C95202 /* LoginService.swift */,
+				8A197552228890AD00C95202 /* IrohaService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		8A7467CD2286610D0061B631 = {
 			isa = PBXGroup;
 			children = (
@@ -97,22 +123,37 @@
 			isa = PBXGroup;
 			children = (
 				8A7467D92286610E0061B631 /* AppDelegate.swift */,
-				8A7467DB2286610E0061B631 /* ViewController.swift */,
-				8A1975432287B63000C95202 /* LoginViewController.swift */,
-				8A1975472288472F00C95202 /* MainViewController.swift */,
-				8A1975452288438D00C95202 /* LoginService.swift */,
 				8A7467EB228662B00061B631 /* Constants.swift */,
-				8A7467EF228667010061B631 /* String+Hexadecimal.swift */,
-				8A1975492288579600C95202 /* IRQueryRequest+Signed.swift */,
-				8A19754B2288593B00C95202 /* Account.swift */,
-				8A7467F522866D500061B631 /* Data+Hexadecimal.swift */,
 				8A7467F322866AE10061B631 /* IrohaErrors.swift */,
+				8AEFA80E228891890022B8A5 /* ViewControllers */,
+				8AEFA80D228891710022B8A5 /* Models */,
+				8A197554228890E100C95202 /* Services */,
+				8A1975512288730C00C95202 /* Extensions */,
 				8A7467DD2286610E0061B631 /* Main.storyboard */,
 				8A7467E0228661140061B631 /* Assets.xcassets */,
 				8A7467E2228661140061B631 /* LaunchScreen.storyboard */,
 				8A7467E5228661150061B631 /* Info.plist */,
 			);
 			path = Iroha;
+			sourceTree = "<group>";
+		};
+		8AEFA80D228891710022B8A5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8A19754B2288593B00C95202 /* Account.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8AEFA80E228891890022B8A5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8A7467DB2286610E0061B631 /* ViewController.swift */,
+				8A1975432287B63000C95202 /* LoginViewController.swift */,
+				8A1975472288472F00C95202 /* MainViewController.swift */,
+				8A19754D22886F2600C95202 /* TransferViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,8 +289,11 @@
 				8A7467F622866D500061B631 /* Data+Hexadecimal.swift in Sources */,
 				8A7467DC2286610E0061B631 /* ViewController.swift in Sources */,
 				8A19754A2288579600C95202 /* IRQueryRequest+Signed.swift in Sources */,
+				8A197553228890AD00C95202 /* IrohaService.swift in Sources */,
 				8A7467F0228667010061B631 /* String+Hexadecimal.swift in Sources */,
+				8A197550228872E800C95202 /* IRTransaction+Signed.swift in Sources */,
 				8A7467F422866AE10061B631 /* IrohaErrors.swift in Sources */,
+				8A19754E22886F2600C95202 /* TransferViewController.swift in Sources */,
 				8A7467DA2286610E0061B631 /* AppDelegate.swift in Sources */,
 				8A1975482288472F00C95202 /* MainViewController.swift in Sources */,
 				8A7467EC228662B00061B631 /* Constants.swift in Sources */,
