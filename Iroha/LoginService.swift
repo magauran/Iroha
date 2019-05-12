@@ -9,8 +9,7 @@
 import IrohaCommunication
 
 class LoginService {
-    typealias Account = String
-    static var currentAccount: Account? = nil
+    static var currentAccount: String? = nil
     
     private let networkService: IRNetworkService = {
         let irohaAddress = try! IRAddressFactory.address(withIp: Constants.irohaIp, port: Constants.irohaPort)
@@ -26,6 +25,7 @@ class LoginService {
             let queryRequest = try IRQueryBuilder(creatorAccountId: userAccountId)
                 .getAccount(userAccountId)
                 .build()
+                .signed(with: Account.admin) // TODO: replace With a real user account
             _ = networkService.execute(queryRequest)
                 .onThen { result -> IRPromise? in
                     LoginService.currentAccount = accountId
