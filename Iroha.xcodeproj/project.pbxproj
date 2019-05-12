@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8A1975442287B63000C95202 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1975432287B63000C95202 /* LoginViewController.swift */; };
 		8A1975462288438D00C95202 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1975452288438D00C95202 /* LoginService.swift */; };
+		8A1975482288472F00C95202 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1975472288472F00C95202 /* MainViewController.swift */; };
 		8A19754A2288579600C95202 /* IRQueryRequest+Signed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1975492288579600C95202 /* IRQueryRequest+Signed.swift */; };
 		8A19754C2288593B00C95202 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A19754B2288593B00C95202 /* Account.swift */; };
 		8A7467DA2286610E0061B631 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7467D92286610E0061B631 /* AppDelegate.swift */; };
@@ -28,6 +29,7 @@
 		5A1E0EB3EB9C87E03198B80E /* Pods-Iroha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Iroha.release.xcconfig"; path = "Pods/Target Support Files/Pods-Iroha/Pods-Iroha.release.xcconfig"; sourceTree = "<group>"; };
 		8A1975432287B63000C95202 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8A1975452288438D00C95202 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		8A1975472288472F00C95202 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8A1975492288579600C95202 /* IRQueryRequest+Signed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IRQueryRequest+Signed.swift"; sourceTree = "<group>"; };
 		8A19754B2288593B00C95202 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		8A7467D62286610E0061B631 /* Iroha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Iroha.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +99,7 @@
 				8A7467D92286610E0061B631 /* AppDelegate.swift */,
 				8A7467DB2286610E0061B631 /* ViewController.swift */,
 				8A1975432287B63000C95202 /* LoginViewController.swift */,
+				8A1975472288472F00C95202 /* MainViewController.swift */,
 				8A1975452288438D00C95202 /* LoginService.swift */,
 				8A7467EB228662B00061B631 /* Constants.swift */,
 				8A7467EF228667010061B631 /* String+Hexadecimal.swift */,
@@ -248,6 +251,7 @@
 				8A7467F0228667010061B631 /* String+Hexadecimal.swift in Sources */,
 				8A7467F422866AE10061B631 /* IrohaErrors.swift in Sources */,
 				8A7467DA2286610E0061B631 /* AppDelegate.swift in Sources */,
+				8A1975482288472F00C95202 /* MainViewController.swift in Sources */,
 				8A7467EC228662B00061B631 /* Constants.swift in Sources */,
 				8A1975462288438D00C95202 /* LoginService.swift in Sources */,
 			);

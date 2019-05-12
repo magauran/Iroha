@@ -10,19 +10,53 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Iroha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Iroha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUz-yj-dgx">
+                                <rect key="frame" x="186" y="94" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIg-Pl-QkP">
+                                <rect key="frame" x="186" y="155" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbs-dV-H0T">
+                                <rect key="frame" x="186" y="216" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pIg-Pl-QkP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="764-1r-tTQ"/>
+                            <constraint firstItem="pIg-Pl-QkP" firstAttribute="top" secondItem="EUz-yj-dgx" secondAttribute="bottom" constant="40" id="ECV-lL-VPl"/>
+                            <constraint firstItem="rbs-dV-H0T" firstAttribute="top" secondItem="pIg-Pl-QkP" secondAttribute="bottom" constant="40" id="KOh-ou-Zzt"/>
+                            <constraint firstItem="EUz-yj-dgx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Q54-nU-jSI"/>
+                            <constraint firstItem="EUz-yj-dgx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="aEV-aa-Lxg"/>
+                            <constraint firstItem="rbs-dV-H0T" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="jlK-lB-PgM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="coinsLabel" destination="pIg-Pl-QkP" id="FnW-a1-gCx"/>
+                        <outlet property="pokeballsLabel" destination="rbs-dV-H0T" id="HxK-Eg-WBc"/>
+                        <outlet property="userLabel" destination="EUz-yj-dgx" id="plL-dN-XFG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="280" y="130"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="iaL-hk-rvx">
