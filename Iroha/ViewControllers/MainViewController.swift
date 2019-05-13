@@ -11,13 +11,7 @@ import IrohaCommunication
 
 class MainViewController: UIViewController {
     @IBOutlet private weak var userLabel: UILabel!
-    @IBOutlet private weak var coinsLabel: UILabel!
-    @IBOutlet private weak var pokeballsLabel: UILabel!
-    
-    private let networkService: IRNetworkService = {
-        let irohaAddress = try! IRAddressFactory.address(withIp: Constants.irohaIp, port: Constants.irohaPort)
-        return IRNetworkService(address: irohaAddress)
-    }()
+    @IBOutlet private weak var tableView: UITableView!
     
     private var timer: Timer?
     private let irohaService = IrohaService()
@@ -31,6 +25,7 @@ class MainViewController: UIViewController {
             .build()
             .signed(with: LoginService.currentAccount!)
     }
+    private var assets = [IRAccountAsset]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,20 +50,29 @@ class MainViewController: UIViewController {
     }
     
     private func reloadData() {
-        irohaService.execute(query: query, responseType: IRAccountAssetsResponse.self) { result in
+        irohaService.execute(query: query, responseType: IRAccountAssetsResponse.self)
+        { [unowned self] result in
             switch result {
             case .success(let response):
-                response.accountAssets.forEach { asset in
-                    if asset.assetId.name == "pokeball" {
-                        self.pokeballsLabel.text = "\(asset.balance.value) pokeballs"
-                    }
-                    if asset.assetId.name == "pokecoin" {
-                        self.coinsLabel.text = "\(asset.balance.value) pokecoins"
-                    }
-                }
+                print(response.accountAssets)
+                self.assets = response.accountAssets
+                self.tableView.reloadData()
             case .failure(let error):
                 print(error)
             }
         }
+    }
+}
+
+extension MainViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return assets.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AssetTableViewCell", for: indexPath)
+        cell.textLabel?.text = assets[indexPath.row].assetId.name
+        cell.detailTextLabel?.text = assets[indexPath.row].balance.value
+        return cell
     }
 }
