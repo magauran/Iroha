@@ -59,6 +59,15 @@ extension LoginViewController: UITextFieldDelegate {
             case Account.trainer.accountId:
                 publicKeyTextField.text = Account.trainer.publicKeyString
                 privateKeyTextField.text = Account.trainer.privateKeyString
+            case Account.leader.accountId:
+                publicKeyTextField.text = Account.leader.publicKeyString
+                privateKeyTextField.text = Account.leader.privateKeyString
+            case Account.pokestop.accountId:
+                publicKeyTextField.text = Account.pokestop.publicKeyString
+                privateKeyTextField.text = Account.pokestop.privateKeyString
+            case Account.nature.accountId:
+                publicKeyTextField.text = Account.nature.publicKeyString
+                privateKeyTextField.text = Account.nature.privateKeyString
             default:
                 return
             }

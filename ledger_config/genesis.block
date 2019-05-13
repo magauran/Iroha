@@ -84,6 +84,27 @@
                           }
                        },
                        {
+                          "createAccount":{
+                             "accountName":"nature",
+                             "domainId":"pokemon",
+                             "publicKey":"0e9880632a23f4aa1e6ee8b8eb2133343ace1869ffdd1391d9362e9da1a6906f"
+                          }
+                       },
+                       {
+                          "createAccount":{
+                             "accountName":"leader",
+                             "domainId":"pokemon",
+                             "publicKey":"6a7c7b956358dd4b150a58cac7da257e030cdbd05809fddb2950e682c7c2877e"
+                          }
+                       },
+                       {
+                          "createAccount":{
+                             "accountName":"pokestop",
+                             "domainId":"pokemon",
+                             "publicKey":"9c2cad2a6200b5e3810cd63a95d2bccb248544dc776a31001c9a227279f649ac"
+                          }
+                       },
+                       {
                           "createAsset":{
                              "assetName":"pokecoin",
                              "domainId":"pokemon",
@@ -93,6 +114,20 @@
                        {
                           "createAsset":{
                              "assetName":"pokeball",
+                             "domainId":"pokemon",
+                             "precision":0
+                          }
+                       },
+                       {
+                          "createAsset":{
+                             "assetName":"badge",
+                             "domainId":"pokemon",
+                             "precision":0
+                          }
+                       },
+                       {
+                          "createAsset":{
+                             "assetName":"pokemon",
                              "domainId":"pokemon",
                              "precision":0
                           }

@@ -40,4 +40,22 @@ extension Account {
                        publicKeyString: Constants.trainerPublicKey,
                        privateKeyString: Constants.trainerPrivateKey)
     }
+    
+    static var leader: Account {
+        return Account(accountId: Constants.leaderAccountId,
+                       publicKeyString: Constants.leaderPublicKey,
+                       privateKeyString: Constants.leaderPrivateKey)
+    }
+    
+    static var pokestop: Account {
+        return Account(accountId: Constants.pokestopAccountId,
+                       publicKeyString: Constants.pokestopPublicKey,
+                       privateKeyString: Constants.pokestopPrivateKey)
+    }
+    
+    static var nature: Account {
+        return Account(accountId: Constants.natureAccountId,
+                       publicKeyString: Constants.naturePublicKey,
+                       privateKeyString: Constants.naturePrivateKey)
+    }
 }
