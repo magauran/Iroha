@@ -10,36 +10,34 @@ import IrohaCommunication
 
 class LoginService {
     static var currentAccount: Account? = nil
-    
-    private let networkService: IRNetworkService = {
-        let irohaAddress = try! IRAddressFactory.address(withIp: Constants.irohaIp, port: Constants.irohaPort)
-        return IRNetworkService(address: irohaAddress)
-    }()
+
+    private let irohaService = IrohaService()
     
     func login(accountId: String,
                publicKeyString: String,
                privateKeyString: String,
                then handler: @escaping (Error?) -> Void){
-        let userAccountId: IRAccountId = {
-            return try! IRAccountIdFactory.account(withIdentifier: accountId)
-        }()
+        let userAccountId = try! IRAccountIdFactory.account(withIdentifier: accountId)
+        let account = Account(accountId: accountId,
+                              publicKeyString: publicKeyString,
+                              privateKeyString: privateKeyString)
         
         do {
             let queryRequest = try IRQueryBuilder(creatorAccountId: userAccountId)
                 .getAccount(userAccountId)
                 .build()
-                .signed(with: Account.admin) // TODO: replace With a real user account
-            _ = networkService.execute(queryRequest)
-                .onThen { result -> IRPromise? in
-                    LoginService.currentAccount = Account(accountId: accountId,
-                                                          publicKeyString: publicKeyString,
-                                                          privateKeyString: privateKeyString)
+                .signed(with: account)
+            
+            irohaService.execute(query: queryRequest, responseType: IRAccountResponse.self) { result in
+                switch result {
+                case .success:
+                    LoginService.currentAccount = account
                     handler(nil)
-                    return nil
-                }.onError { error -> IRPromise? in
+                case .failure(let error):
                     handler(error)
-                    return nil
+                }
             }
+            
         } catch {
             return handler(error)
         }
