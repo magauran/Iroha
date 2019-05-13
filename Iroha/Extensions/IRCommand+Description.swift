@@ -15,7 +15,7 @@ extension IRCommand {
             return "+ \(addAssetQuantity.amount.value) \(addAssetQuantity.assetId.name)"
         case let transferAsset as IRTransferAsset:
             return "Transfer \(transferAsset.amount.value) \(transferAsset.assetId.name) " +
-            "from  \(transferAsset.sourceAccountId.name) to \(transferAsset.destinationAccountId.name)"
+            "from \(transferAsset.sourceAccountId.name) to \(transferAsset.destinationAccountId.name)"
         default: return ""
         }
     }

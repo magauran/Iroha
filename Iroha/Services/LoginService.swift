@@ -9,14 +9,17 @@
 import IrohaCommunication
 
 class LoginService {
-    static var currentAccount: String? = nil
+    static var currentAccount: Account? = nil
     
     private let networkService: IRNetworkService = {
         let irohaAddress = try! IRAddressFactory.address(withIp: Constants.irohaIp, port: Constants.irohaPort)
         return IRNetworkService(address: irohaAddress)
     }()
     
-    func login(accountId: String, then handler: @escaping (Error?) -> Void) {
+    func login(accountId: String,
+               publicKeyString: String,
+               privateKeyString: String,
+               then handler: @escaping (Error?) -> Void){
         let userAccountId: IRAccountId = {
             return try! IRAccountIdFactory.account(withIdentifier: accountId)
         }()
@@ -28,7 +31,9 @@ class LoginService {
                 .signed(with: Account.admin) // TODO: replace With a real user account
             _ = networkService.execute(queryRequest)
                 .onThen { result -> IRPromise? in
-                    LoginService.currentAccount = accountId
+                    LoginService.currentAccount = Account(accountId: accountId,
+                                                          publicKeyString: publicKeyString,
+                                                          privateKeyString: privateKeyString)
                     handler(nil)
                     return nil
                 }.onError { error -> IRPromise? in

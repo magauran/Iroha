@@ -14,4 +14,5 @@ enum IrohaError: Error {
     case unexpectedResponse(response: String)
     case invalidTransaction
     case invalidQueryRequest
+    case unauthorized
 }

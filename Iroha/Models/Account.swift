@@ -9,6 +9,7 @@
 import IrohaCommunication
 
 struct Account {
+    let accountId: String
     let publicKeyString: String
     let privateKeyString: String
     
@@ -29,6 +30,14 @@ struct Account {
 
 extension Account {
     static var admin: Account {
-        return Account(publicKeyString: Constants.adminPublicKey, privateKeyString: Constants.adminPrivateKey)
+        return Account(accountId: Constants.adminAccountId,
+                       publicKeyString: Constants.adminPublicKey,
+                       privateKeyString: Constants.adminPrivateKey)
+    }
+    
+    static var trainer: Account {
+        return Account(accountId: Constants.trainerAccountId,
+                       publicKeyString: Constants.trainerPublicKey,
+                       privateKeyString: Constants.trainerPrivateKey)
     }
 }

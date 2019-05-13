@@ -14,7 +14,7 @@ class TransactionsTableViewController: UITableViewController {
     
     private var query: IRQueryRequest {
         let userAccountId: IRAccountId = {
-            return try! IRAccountIdFactory.account(withIdentifier: LoginService.currentAccount!)
+            return try! IRAccountIdFactory.account(withIdentifier: LoginService.currentAccount!.accountId)
         }()
         
         let pagination = try! IRPaginationFactory.pagination(100, firstItemHash: nil)
@@ -22,7 +22,7 @@ class TransactionsTableViewController: UITableViewController {
         return try! IRQueryBuilder(creatorAccountId: userAccountId)
             .getAccountTransactions(userAccountId, pagination: pagination)
             .build()
-            .signed(with: Account.admin)
+            .signed(with: LoginService.currentAccount!)
     }
     
     private var transactions = [IRTransaction]()

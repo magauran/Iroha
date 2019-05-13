@@ -16,7 +16,6 @@
 		8A197550228872E800C95202 /* IRTransaction+Signed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A19754F228872E800C95202 /* IRTransaction+Signed.swift */; };
 		8A197553228890AD00C95202 /* IrohaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A197552228890AD00C95202 /* IrohaService.swift */; };
 		8A7467DA2286610E0061B631 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7467D92286610E0061B631 /* AppDelegate.swift */; };
-		8A7467DC2286610E0061B631 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7467DB2286610E0061B631 /* ViewController.swift */; };
 		8A7467DF2286610E0061B631 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A7467DD2286610E0061B631 /* Main.storyboard */; };
 		8A7467E1228661140061B631 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A7467E0228661140061B631 /* Assets.xcassets */; };
 		8A7467E4228661140061B631 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A7467E2228661140061B631 /* LaunchScreen.storyboard */; };
@@ -42,7 +41,6 @@
 		8A197552228890AD00C95202 /* IrohaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrohaService.swift; sourceTree = "<group>"; };
 		8A7467D62286610E0061B631 /* Iroha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Iroha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A7467D92286610E0061B631 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8A7467DB2286610E0061B631 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8A7467DE2286610E0061B631 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A7467E0228661140061B631 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A7467E3228661140061B631 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -153,7 +151,6 @@
 		8AEFA80E228891890022B8A5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8A7467DB2286610E0061B631 /* ViewController.swift */,
 				8A1975432287B63000C95202 /* LoginViewController.swift */,
 				8A1975472288472F00C95202 /* MainViewController.swift */,
 				8A19754D22886F2600C95202 /* TransferViewController.swift */,
@@ -293,7 +290,6 @@
 				8A1975442287B63000C95202 /* LoginViewController.swift in Sources */,
 				8A19754C2288593B00C95202 /* Account.swift in Sources */,
 				8A7467F622866D500061B631 /* Data+Hexadecimal.swift in Sources */,
-				8A7467DC2286610E0061B631 /* ViewController.swift in Sources */,
 				8A19754A2288579600C95202 /* IRQueryRequest+Signed.swift in Sources */,
 				8AEFA810228995030022B8A5 /* TransactionsTableViewController.swift in Sources */,
 				8A197553228890AD00C95202 /* IrohaService.swift in Sources */,

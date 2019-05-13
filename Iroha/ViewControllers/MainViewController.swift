@@ -23,17 +23,18 @@ class MainViewController: UIViewController {
     private let irohaService = IrohaService()
     private var query: IRQueryRequest {
         let userAccountId: IRAccountId = {
-            return try! IRAccountIdFactory.account(withIdentifier: LoginService.currentAccount!)
+            return try! IRAccountIdFactory.account(withIdentifier: LoginService.currentAccount!.accountId)
         }()
         
         return try! IRQueryBuilder(creatorAccountId: userAccountId)
             .getAccountAssets(userAccountId)
             .build()
-            .signed(with: Account.admin)
+            .signed(with: LoginService.currentAccount!)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        userLabel.text = LoginService.currentAccount?.accountId
         reloadData()
     }
     

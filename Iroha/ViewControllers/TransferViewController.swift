@@ -20,7 +20,7 @@ class TransferViewController: UIViewController {
         // TODO: validate inputs
         
         let userAccountId: IRAccountId = {
-            return try! IRAccountIdFactory.account(withIdentifier: LoginService.currentAccount!)
+            return try! IRAccountIdFactory.account(withIdentifier: LoginService.currentAccount!.accountId)
         }()
         
         let destinationAccountId: IRAccountId = {
@@ -42,7 +42,7 @@ class TransferViewController: UIViewController {
                            description: "Description",
                            amount: amount)
             .build()
-            .signed(with: Account.admin)
+            .signed(with: LoginService.currentAccount!)
         irohaService.execute(transaction: transaction) { error in
             if let error = error {
                 print(error)

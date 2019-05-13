@@ -11,6 +11,9 @@ import UIKit
 class LoginViewController: UIViewController {
 
     @IBOutlet private weak var accountIdTextField: UITextField!
+    @IBOutlet private weak var publicKeyTextField: UITextField!
+    @IBOutlet private weak var privateKeyTextField: UITextField!
+    
     
     @IBOutlet private weak var loginButton: UIButton! {
         didSet {
@@ -21,8 +24,13 @@ class LoginViewController: UIViewController {
     private let loginService = LoginService()
     
     @IBAction private func login() {
-        let id = accountIdTextField.text
-        loginService.login(accountId: id!) { [unowned self] error in
+        guard let id = accountIdTextField.text,
+            let publicKeyString = publicKeyTextField.text,
+            let privateKeyString = privateKeyTextField.text
+            else { return }
+        loginService.login(accountId: id,
+                           publicKeyString: publicKeyString,
+                           privateKeyString: privateKeyString) { [unowned self] error in
             if let error = error {
                 self.showError(error)
                 return
@@ -38,5 +46,22 @@ class LoginViewController: UIViewController {
     
     func showMainScreen() {
         performSegue(withIdentifier: "MainViewController", sender: nil)
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == accountIdTextField, let text = textField.text {
+            switch text {
+            case Account.admin.accountId:
+                publicKeyTextField.text = Account.admin.publicKeyString
+                privateKeyTextField.text = Account.admin.privateKeyString
+            case Account.trainer.accountId:
+                publicKeyTextField.text = Account.trainer.publicKeyString
+                privateKeyTextField.text = Account.trainer.privateKeyString
+            default:
+                return
+            }
+        }
     }
 }
