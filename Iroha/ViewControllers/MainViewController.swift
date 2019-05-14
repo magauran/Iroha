@@ -54,7 +54,6 @@ class MainViewController: UIViewController {
         { [unowned self] result in
             switch result {
             case .success(let response):
-                print(response.accountAssets)
                 self.assets = response.accountAssets
                 self.tableView.reloadData()
             case .failure(let error):
@@ -70,9 +69,19 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AssetTableViewCell", for: indexPath)
-        cell.textLabel?.text = assets[indexPath.row].assetId.name
-        cell.detailTextLabel?.text = assets[indexPath.row].balance.value
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AssetTableViewCell", for: indexPath) as! AssetTableViewCell
+        let asset = assets[indexPath.row]
+        cell.nameLabel?.text = asset.assetId.name
+        cell.amountLabel?.text = asset.balance.value
+        cell.iconImageView?.image = {
+            switch asset.assetId.name {
+            case "pokeball": return UIImage(named: "pokeball")
+            case "pokecoin": return UIImage(named: "pokecoin")
+            case "pokemon": return UIImage(named: "pikachu-2")
+            case "badge": return UIImage(named: "star-1")
+            default: return nil
+            }
+        }()
         return cell
     }
 }

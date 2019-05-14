@@ -10,6 +10,11 @@ import UIKit
 import IrohaCommunication
 
 class TransferViewController: UIViewController {
+    @IBOutlet weak var sendButton: UIButton! {
+        didSet {
+            self.sendButton.layer.cornerRadius = 10
+        }
+    }
     @IBOutlet private weak var assetTextField: UITextField!
     @IBOutlet private weak var destinationTextField: UITextField!
     @IBOutlet private weak var amountTextField: UITextField!

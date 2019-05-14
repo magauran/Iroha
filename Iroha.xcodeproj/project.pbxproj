@@ -25,6 +25,7 @@
 		8A7467F622866D500061B631 /* Data+Hexadecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7467F522866D500061B631 /* Data+Hexadecimal.swift */; };
 		8AEFA810228995030022B8A5 /* TransactionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEFA80F228995030022B8A5 /* TransactionsTableViewController.swift */; };
 		8AEFA8122289F3B70022B8A5 /* IRCommand+Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEFA8112289F3B70022B8A5 /* IRCommand+Description.swift */; };
+		8AEFA814228A41F90022B8A5 /* AssetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEFA813228A41F90022B8A5 /* AssetTableViewCell.swift */; };
 		E7C9703CAE348B91B0119380 /* Pods_Iroha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D6528C4E6C3A7D42776897 /* Pods_Iroha.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		8A7467F522866D500061B631 /* Data+Hexadecimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Hexadecimal.swift"; sourceTree = "<group>"; };
 		8AEFA80F228995030022B8A5 /* TransactionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsTableViewController.swift; sourceTree = "<group>"; };
 		8AEFA8112289F3B70022B8A5 /* IRCommand+Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IRCommand+Description.swift"; sourceTree = "<group>"; };
+		8AEFA813228A41F90022B8A5 /* AssetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetTableViewCell.swift; sourceTree = "<group>"; };
 		A90006050AF074D4DF3612B9 /* Pods-Iroha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Iroha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Iroha/Pods-Iroha.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +129,7 @@
 			children = (
 				8A7467D92286610E0061B631 /* AppDelegate.swift */,
 				8A7467EB228662B00061B631 /* Constants.swift */,
+				8AEFA813228A41F90022B8A5 /* AssetTableViewCell.swift */,
 				8A7467F322866AE10061B631 /* IrohaErrors.swift */,
 				8AEFA80E228891890022B8A5 /* ViewControllers */,
 				8AEFA80D228891710022B8A5 /* Models */,
@@ -293,6 +296,7 @@
 				8A19754A2288579600C95202 /* IRQueryRequest+Signed.swift in Sources */,
 				8AEFA810228995030022B8A5 /* TransactionsTableViewController.swift in Sources */,
 				8A197553228890AD00C95202 /* IrohaService.swift in Sources */,
+				8AEFA814228A41F90022B8A5 /* AssetTableViewCell.swift in Sources */,
 				8A7467F0228667010061B631 /* String+Hexadecimal.swift in Sources */,
 				8A197550228872E800C95202 /* IRTransaction+Signed.swift in Sources */,
 				8A7467F422866AE10061B631 /* IrohaErrors.swift in Sources */,
