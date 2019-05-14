@@ -22,6 +22,9 @@ class TransferViewController: UIViewController {
     private let irohaService = IrohaService()
     
     @IBAction private func send() {
+        defer {
+            view.endEditing(true)
+        }
         // TODO: validate inputs
         
         guard
