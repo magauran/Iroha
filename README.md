@@ -1,7 +1,10 @@
 # Iroha
 
-Simple Iroha app with iOS client.  
-This example was created for the `Basics of Grid and Cloud Computing course`.
+Simple [Iroha](https://github.com/hyperledger/iroha) app with iOS client.  
+This example was created for the *Basics of Grid and Cloud Computing course*.
+
+## Legend
+![legend](.github/legend.png)
 
 ## How to launch
   1. Clone this repo
