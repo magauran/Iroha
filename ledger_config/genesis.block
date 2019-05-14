@@ -142,6 +142,112 @@
                     "quorum":1
                  }
               }
+           },
+           {
+              "payload": {
+                 "reducedPayload": {
+                    "commands": [
+                        {
+                          "addAssetQuantity":{
+                            "assetId": "pokemon#pokemon",
+                            "amount": "100000"
+                          }
+                        },
+                        {
+                          "addAssetQuantity":{
+                            "assetId": "pokeball#pokemon",
+                            "amount": "100000"
+                          }
+                        },
+                        {
+                          "addAssetQuantity":{
+                            "assetId": "pokecoin#pokemon",
+                            "amount": "100000"
+                          }
+                        },
+                        {
+                          "addAssetQuantity":{
+                            "assetId": "badge#pokemon",
+                            "amount": "100000"
+                          }
+                        },
+                        {
+                          "transferAsset": {
+                            "srcAccountId": "professor@pokemon",
+                            "destAccountId": "trainer@pokemon",
+                            "assetId": "pokecoin#pokemon",
+                            "description": "Initial value",
+                            "amount": "100"
+                          }
+                        },
+                        {
+                          "transferAsset": {
+                            "srcAccountId": "professor@pokemon",
+                            "destAccountId": "nature@pokemon",
+                            "assetId": "pokemon#pokemon",
+                            "description": "Initial value",
+                            "amount": "1000"
+                          }
+                        },
+                        {
+                          "transferAsset": {
+                            "srcAccountId": "professor@pokemon",
+                            "destAccountId": "leader@pokemon",
+                            "assetId": "badge#pokemon",
+                            "description": "Initial value",
+                            "amount": "50"
+                          }
+                        },
+                        {
+                          "transferAsset": {
+                            "srcAccountId": "professor@pokemon",
+                            "destAccountId": "pokestop@pokemon",
+                            "assetId": "pokeball#pokemon",
+                            "description": "Initial value",
+                            "amount": "1000"
+                          }
+                        },
+                        {
+                          "transferAsset": {
+                            "srcAccountId": "professor@pokemon",
+                            "destAccountId": "trainer@pokemon",
+                            "assetId": "pokemon#pokemon",
+                            "description": "Initial value",
+                            "amount": "1"
+                          }
+                        },
+                        {
+                          "transferAsset": {
+                            "srcAccountId": "professor@pokemon",
+                            "destAccountId": "trainer@pokemon",
+                            "assetId": "pokeball#pokemon",
+                            "description": "Initial value",
+                            "amount": "50"
+                          }
+                        },
+                        {
+                          "transferAsset": {
+                            "srcAccountId": "professor@pokemon",
+                            "destAccountId": "leader@pokemon",
+                            "assetId": "pokemon#pokemon",
+                            "description": "Initial value",
+                            "amount": "10"
+                          }
+                        },
+                        {
+                          "transferAsset": {
+                            "srcAccountId": "professor@pokemon",
+                            "destAccountId": "leader@pokemon",
+                            "assetId": "pokeball#pokemon",
+                            "description": "Initial value",
+                            "amount": "10"
+                          }
+                        }
+                    ],
+                    "creatorAccountId": "professor@pokemon",
+                    "quorum":1
+                }
+              }
            }
         ],
         "txNumber":1,
