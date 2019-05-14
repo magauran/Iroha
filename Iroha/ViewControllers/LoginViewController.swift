@@ -14,14 +14,20 @@ class LoginViewController: UIViewController {
     @IBOutlet private weak var publicKeyTextField: UITextField!
     @IBOutlet private weak var privateKeyTextField: UITextField!
     
-    
     @IBOutlet private weak var loginButton: UIButton! {
         didSet {
             self.loginButton.layer.cornerRadius = 10
         }
     }
     
+    @IBOutlet private weak var centerYConstraint: NSLayoutConstraint!
     private let loginService = LoginService()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
     
     @IBAction private func login() {
         guard let id = accountIdTextField.text,
@@ -46,6 +52,27 @@ class LoginViewController: UIViewController {
     
     func showMainScreen() {
         performSegue(withIdentifier: "MainViewController", sender: nil)
+    }
+    
+    @objc
+    private func keyboardWillShow(notification: Notification) {
+        guard
+            let keyboardSize = (notification.userInfo? [UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+            else { return }
+        centerYConstraint.constant = -(view.frame.height / 2 - keyboardSize.height) / 2 - view.safeAreaInsets.bottom
+        
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @objc
+    private func keyboardWillHide(notification: Notification){
+        centerYConstraint.constant = 0
+        
+        UIView.animate(withDuration: 0.5){
+            self.view.layoutIfNeeded()
+        }
     }
 }
 

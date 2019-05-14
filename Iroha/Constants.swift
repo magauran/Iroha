@@ -27,9 +27,6 @@ enum Constants {
     static let pokestopPublicKey = "9c2cad2a6200b5e3810cd63a95d2bccb248544dc776a31001c9a227279f649ac"
     static let pokestopPrivateKey = "c9402952170d84b6db2ff81af01256c81e33215fd83395b25024b8a47f6ac070"
     
-    static let assetId = "pokeball#pokemon"
-    static let domainId = "pokemon"
-    static let assetMintVolume: UInt = 10
     static let irohaIp = "127.0.0.1"
     static let irohaPort = "50051"
 }

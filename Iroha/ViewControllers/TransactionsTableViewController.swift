@@ -41,9 +41,8 @@ class TransactionsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionTableViewCell", for: indexPath)
         let transaction = transactions[indexPath.row]
-        let transactionHash = (try? transaction.transactionHash())?.hexadecimal ?? ""
         cell.textLabel?.text = transaction.commands[0].customDescription
-        cell.detailTextLabel?.text = transactionHash
+        cell.detailTextLabel?.text = (try? transaction.transactionHash())?.hexadecimal
         return cell
     }
     

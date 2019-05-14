@@ -24,21 +24,15 @@ class TransferViewController: UIViewController {
     @IBAction private func send() {
         // TODO: validate inputs
         
-        let userAccountId: IRAccountId = {
-            return try! IRAccountIdFactory.account(withIdentifier: LoginService.currentAccount!.accountId)
-        }()
-        
-        let destinationAccountId: IRAccountId = {
-            return try! IRAccountIdFactory.account(withIdentifier: destinationTextField.text ?? "")
-        }()
-        
-        let assetId: IRAssetId = {
-            return try! IRAssetIdFactory.asset(withIdentifier: assetTextField.text ?? "")
-        }()
-        
-        let amount: IRAmount = {
-            return try! IRAmountFactory.amount(from: amountTextField.text ?? "0")
-        }()
+        guard
+            let userAccountId = try? IRAccountIdFactory.account(withIdentifier: LoginService.currentAccount!.accountId),
+            let destinationAccountId = try? IRAccountIdFactory.account(withIdentifier: destinationTextField.text ?? ""),
+            let assetId = try? IRAssetIdFactory.asset(withIdentifier: assetTextField.text ?? ""),
+            let amount = try? IRAmountFactory.amount(from: amountTextField.text ?? "0")
+            else {
+            print("Incorrect user input")
+            return
+        }
             
         let transaction = try! IRTransactionBuilder(creatorAccountId: userAccountId)
             .transferAsset(userAccountId,
